@@ -2,11 +2,11 @@ package com.formento.challengeexercises.component;
 
 import com.google.common.collect.ImmutableList;
 
+import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.BinaryOperator;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
@@ -15,22 +15,19 @@ import static java.util.stream.Collectors.toMap;
 public class DistanceCalculator {
 
     public Map<String, List<Integer>> calculateLessDistance(final List<String> words, final Integer maxDistance) {
-
         return words
                 .stream()
                 .distinct()
+                .map(word -> new AbstractMap.SimpleImmutableEntry<>(word, getDistances(words, maxDistance, word)))
+                .filter(entry -> !entry.getValue().isEmpty())
                 .collect(
                         toMap(
-                                word -> word,
-                                word -> getDistances(words, maxDistance, word),
+                                Map.Entry::getKey,
+                                Map.Entry::getValue,
                                 throwingMerger(),
                                 TreeMap::new
                         )
-                )
-                .entrySet()
-                .stream()
-                .filter(entry -> !entry.getValue().isEmpty())
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+                );
     }
 
     private List<Integer> getDistances(final List<String> words, final Integer maxDistance, final String word) {
