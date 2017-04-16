@@ -5,10 +5,9 @@ import com.google.common.collect.ImmutableList;
 import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
-import java.util.function.BinaryOperator;
 import java.util.stream.IntStream;
 
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 
@@ -20,12 +19,11 @@ public class DistanceCalculator {
                 .distinct()
                 .map(word -> new AbstractMap.SimpleImmutableEntry<>(word, getDistances(words, maxDistance, word)))
                 .filter(entry -> !entry.getValue().isEmpty())
+                .sorted(comparing(AbstractMap.SimpleImmutableEntry::getKey))
                 .collect(
                         toMap(
                                 Map.Entry::getKey,
-                                Map.Entry::getValue,
-                                throwingMerger(),
-                                TreeMap::new
+                                Map.Entry::getValue
                         )
                 );
     }
@@ -47,12 +45,6 @@ public class DistanceCalculator {
                 .stream()
                 .filter(index -> index <= maxDistance)
                 .collect(toList());
-    }
-
-    private static <T> BinaryOperator<T> throwingMerger() {
-        return (u, v) -> {
-            throw new IllegalStateException(String.format("Duplicate key %s", u));
-        };
     }
 
 }
