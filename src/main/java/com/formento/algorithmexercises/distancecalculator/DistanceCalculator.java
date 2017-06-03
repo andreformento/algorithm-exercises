@@ -13,11 +13,11 @@ import static java.util.stream.Collectors.toMap;
 
 public class DistanceCalculator {
 
-    public Map<String, List<Integer>> calculateLessDistance(final List<String> words, final Integer maxDistance) {
-        return words
+    public Map<Character, List<Integer>> calculateDistance(final List<Character> characters, final Integer maxDistance) {
+        return characters
                 .stream()
                 .distinct()
-                .map(word -> new AbstractMap.SimpleImmutableEntry<>(word, getDistances(words, maxDistance, word)))
+                .map(character -> new AbstractMap.SimpleImmutableEntry<>(character, getDistances(characters, maxDistance, character)))
                 .filter(entry -> !entry.getValue().isEmpty())
                 .sorted(comparing(AbstractMap.SimpleImmutableEntry::getKey))
                 .collect(
@@ -28,10 +28,10 @@ public class DistanceCalculator {
                 );
     }
 
-    private List<Integer> getDistances(final List<String> words, final Integer maxDistance, final String word) {
+    private List<Integer> getDistances(final List<Character> characters, final Integer maxDistance, final Character character) {
         final List<Integer> indexes = IntStream
-                .range(0, words.size())
-                .filter(index -> word.equals(words.get(index)))
+                .range(0, characters.size())
+                .filter(index -> character.equals(characters.get(index)))
                 .boxed()
                 .collect(toList());
 
