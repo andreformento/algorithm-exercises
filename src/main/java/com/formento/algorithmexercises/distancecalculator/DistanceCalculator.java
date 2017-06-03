@@ -1,4 +1,4 @@
-package com.formento.challengeexercises.component;
+package com.formento.algorithmexercises.distancecalculator;
 
 import com.google.common.collect.ImmutableList;
 

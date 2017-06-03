@@ -1,4 +1,4 @@
-# challenge exercises
+# Algorithm exercises
 
 #### How to
 Build with `$ gradle build`

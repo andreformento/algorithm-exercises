@@ -1,4 +1,4 @@
-package com.formento.challengeexercises;
+package com.formento.algorithmexercises;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
