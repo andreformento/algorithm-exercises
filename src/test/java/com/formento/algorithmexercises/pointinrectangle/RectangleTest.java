@@ -1,10 +1,19 @@
 package com.formento.algorithmexercises.pointinrectangle;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
 import br.com.six2six.fixturefactory.Fixture;
+import br.com.six2six.fixturefactory.Rule;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
+import com.formento.algorithmexercises.pointinrectangle.template.PointTemplate;
 import com.formento.algorithmexercises.pointinrectangle.template.RectangleTemplate;
+import com.google.common.collect.ImmutableSortedSet;
+import java.util.Collection;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -30,6 +39,37 @@ public class RectangleTest {
     @Test
     public void equalsContract() {
         EqualsVerifier.forClass(Rectangle.class).verify();
+    }
+
+    @Test
+    public void shouldBeValidComparatorByNatural() {
+        // given
+        final Rectangle rectangle_A = Fixture.from(Rectangle.class).gimme(RectangleTemplate.A);
+        final Rectangle rectangle_B = Fixture.from(Rectangle.class).gimme(RectangleTemplate.B);
+        final Rectangle rectangle_C = Fixture.from(Rectangle.class).gimme(RectangleTemplate.C);
+        final Rectangle rectangle_D = Fixture.from(Rectangle.class).gimme(RectangleTemplate.D);
+        final Rectangle rectangle_E = Fixture.from(Rectangle.class).gimme(RectangleTemplate.E);
+        final Rectangle rectangle_F = Fixture.from(Rectangle.class).gimme(RectangleTemplate.F);
+
+        // when
+        final Collection<Rectangle> rectangles = ImmutableSortedSet.<Rectangle>naturalOrder().add(
+            rectangle_C,
+            rectangle_A,
+            rectangle_D,
+            rectangle_F,
+            rectangle_E,
+            rectangle_B
+        ).build();
+
+        // then
+        assertThat(rectangles, contains(
+            allOf(hasProperty("leftBottom", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_0_0))), hasProperty("rightTop", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_2_3)))),
+            allOf(hasProperty("leftBottom", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_0_3))), hasProperty("rightTop", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_2_5)))),
+            allOf(hasProperty("leftBottom", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_1_2))), hasProperty("rightTop", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_4_4)))),
+            allOf(hasProperty("leftBottom", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_2_0))), hasProperty("rightTop", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_4_3)))),
+            allOf(hasProperty("leftBottom", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_2_3))), hasProperty("rightTop", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_6_5)))),
+            allOf(hasProperty("leftBottom", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_3_0))), hasProperty("rightTop", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_6_3))))
+        ));
     }
 
 }

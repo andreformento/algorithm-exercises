@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public class Rectangle {
+public class Rectangle implements Comparable<Rectangle> {
 
     private final Point leftBottom;
     private final Point rightTop;
@@ -27,5 +27,14 @@ public class Rectangle {
     @Override
     public final int hashCode() {
         return Objects.hash(leftBottom, rightTop);
+    }
+
+    @Override
+    public int compareTo(Rectangle other) {
+        final int compare = leftBottom.compareTo(other.leftBottom);
+        if (compare == 0) {
+            return rightTop.compareTo(other.rightTop);
+        }
+        return compare;
     }
 }
