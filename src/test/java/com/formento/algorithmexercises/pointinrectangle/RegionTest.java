@@ -1,5 +1,6 @@
 package com.formento.algorithmexercises.pointinrectangle;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import br.com.six2six.fixturefactory.Fixture;
@@ -23,7 +24,7 @@ public class RegionTest {
         // then
         assertNotNull(region);
         assertNotNull(region.getRectangles());
-        assertEquals(Integer.valueOf(6), region.getRectangles().size());
+        assertEquals(6, region.getRectangles().size());
     }
 
 }

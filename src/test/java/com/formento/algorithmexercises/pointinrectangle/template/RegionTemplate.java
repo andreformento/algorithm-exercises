@@ -4,6 +4,7 @@ import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
 import br.com.six2six.fixturefactory.loader.TemplateLoader;
 import com.formento.algorithmexercises.pointinrectangle.Rectangle;
+import com.formento.algorithmexercises.pointinrectangle.Region;
 
 public class RegionTemplate implements TemplateLoader {
 
@@ -11,9 +12,9 @@ public class RegionTemplate implements TemplateLoader {
 
     @Override
     public void load() {
-        Fixture.of(Rectangle.class)
+        Fixture.of(Region.class)
             .addTemplate(VALID, new Rule() {{
-                add("rectangles", has(3).of(Rectangle.class,
+                add("rectangles", has(6).of(Rectangle.class,
                     RectangleTemplate.A,
                     RectangleTemplate.B,
                     RectangleTemplate.C,
