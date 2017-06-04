@@ -1,15 +1,14 @@
 package com.formento.algorithmexercises.distancecalculator;
 
-import com.google.common.collect.ImmutableList;
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toMap;
 
+import com.google.common.collect.ImmutableList;
 import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
-
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
 
 public class DistanceCalculator {
 

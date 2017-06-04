@@ -15,7 +15,6 @@ public class Region {
         this.rectangles = ImmutableSortedSet.<Rectangle>naturalOrder().addAll(rectangles).build();
     }
 
-
     public static class Builder {
 
         private final ImmutableList.Builder<Rectangle> rectangles;

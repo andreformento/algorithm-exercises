@@ -8,7 +8,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import br.com.six2six.fixturefactory.Fixture;
-import br.com.six2six.fixturefactory.Rule;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
 import com.formento.algorithmexercises.pointinrectangle.template.PointTemplate;
 import com.formento.algorithmexercises.pointinrectangle.template.RectangleTemplate;

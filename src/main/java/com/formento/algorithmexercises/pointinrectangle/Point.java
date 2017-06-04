@@ -1,8 +1,6 @@
 package com.formento.algorithmexercises.pointinrectangle;
 
-import java.util.Comparator;
 import java.util.Objects;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
