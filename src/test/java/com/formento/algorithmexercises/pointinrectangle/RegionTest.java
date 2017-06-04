@@ -73,29 +73,4 @@ public class RegionTest {
         ));
     }
 
-    /*
-    P = (5,2) -> [F]
-    P = (0,0) -> [A]
-    P = (6,6) -> []
-    P = (6,5) -> [E]
-    P = (3,1) -> [D,F]
-    P = (1,4) -> [B,C]
-    P = (4,3) -> [D,E,F]
-    P = (2,3) -> [A,B,C,D]
-    P = (3,3) -> [C,D,E,F]
-    * */
-
-    @Test
-    public void shouldGetRectangulesByPoint() {
-        // given
-        final Region region = Fixture.from(Region.class).gimme(RegionTemplate.VALID);
-        final Point point = new Point(5, 2);
-
-        // when
-        final Collection<Rectangle> rectanglesByPoint = region.getRectanglesByPoint(point);
-
-        // then
-        assertNotNull(rectanglesByPoint);
-    }
-
 }
