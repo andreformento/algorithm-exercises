@@ -67,4 +67,5 @@ public class PointTemplate implements TemplateLoader {
                 add("y", 3);
             }});
     }
+
 }

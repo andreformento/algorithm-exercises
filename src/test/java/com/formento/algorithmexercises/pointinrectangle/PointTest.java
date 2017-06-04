@@ -27,7 +27,7 @@ public class PointTest {
     @Test
     public void shouldCreatePoint() {
         // given
-        Point point = Fixture.from(Point.class).gimme(PointTemplate.P_1_2);
+        final Point point = Fixture.from(Point.class).gimme(PointTemplate.P_1_2);
 
         // then
         assertNotNull(point);

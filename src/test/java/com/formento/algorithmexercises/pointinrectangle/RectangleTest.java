@@ -27,7 +27,7 @@ public class RectangleTest {
     @Test
     public void shouldCreateRectangle() {
         // given
-        Rectangle rectangle = Fixture.from(Rectangle.class).gimme(RectangleTemplate.A);
+        final Rectangle rectangle = Fixture.from(Rectangle.class).gimme(RectangleTemplate.A);
 
         // then
         assertNotNull(rectangle);
