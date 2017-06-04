@@ -3,6 +3,7 @@ package com.formento.algorithmexercises.pointinrectangle.template;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
 import br.com.six2six.fixturefactory.loader.TemplateLoader;
+import com.formento.algorithmexercises.pointinrectangle.Point;
 
 public class PointTemplate implements TemplateLoader {
 

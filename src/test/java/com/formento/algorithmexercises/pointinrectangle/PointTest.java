@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
 import com.formento.algorithmexercises.pointinrectangle.template.PointTemplate;
-import com.formento.algorithmexercises.pointinrectangle.template.RectangleTemplate;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -18,14 +17,14 @@ public class PointTest {
     }
 
     @Test
-    public void shouldCreatePoint(){
+    public void shouldCreatePoint() {
         // given
         Point point = Fixture.from(Point.class).gimme(PointTemplate.P_1_2);
 
         // then
         assertNotNull(point);
-        assertEquals(Integer.valueOf(1),point.getX());
-        assertEquals(Integer.valueOf(2),point.getY());
+        assertEquals(Integer.valueOf(1), point.getX());
+        assertEquals(Integer.valueOf(2), point.getY());
     }
 
 }

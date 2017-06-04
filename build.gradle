@@ -29,7 +29,8 @@ repositories {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
     compile group: 'com.google.guava', name: 'guava', version: '21.0'
-    testCompile group: 'br.com.six2six', name: 'fixture-factory', version: '3.1.0'
+    compileOnly("org.projectlombok:lombok:1.16.16")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'br.com.six2six', name: 'fixture-factory', version: '3.1.0'
 }
