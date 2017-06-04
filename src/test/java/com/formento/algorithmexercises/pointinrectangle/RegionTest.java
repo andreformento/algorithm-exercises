@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
 import com.formento.algorithmexercises.pointinrectangle.template.RegionTemplate;
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -25,6 +26,11 @@ public class RegionTest {
         assertNotNull(region);
         assertNotNull(region.getRectangles());
         assertEquals(6, region.getRectangles().size());
+    }
+
+    @Test
+    public void equalsContract() {
+        EqualsVerifier.forClass(Region.class).verify();
     }
 
 }

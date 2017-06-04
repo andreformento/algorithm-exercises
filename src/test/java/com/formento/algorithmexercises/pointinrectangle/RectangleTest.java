@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
 import com.formento.algorithmexercises.pointinrectangle.template.RectangleTemplate;
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -24,6 +25,11 @@ public class RectangleTest {
         assertNotNull(rectangle);
         assertNotNull(rectangle.getLeftBottom());
         assertNotNull(rectangle.getRightTop());
+    }
+
+    @Test
+    public void equalsContract() {
+        EqualsVerifier.forClass(Rectangle.class).verify();
     }
 
 }

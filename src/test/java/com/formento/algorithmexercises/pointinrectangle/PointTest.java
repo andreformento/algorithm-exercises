@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
 import com.formento.algorithmexercises.pointinrectangle.template.PointTemplate;
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -25,6 +26,11 @@ public class PointTest {
         assertNotNull(point);
         assertEquals(Integer.valueOf(1), point.getX());
         assertEquals(Integer.valueOf(2), point.getY());
+    }
+
+    @Test
+    public void equalsContract() {
+        EqualsVerifier.forClass(Point.class).verify();
     }
 
 }
