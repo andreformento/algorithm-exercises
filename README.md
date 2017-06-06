@@ -4,6 +4,8 @@
 - Return repetitive letters in array that respect the max distance [go to](src/main/java/com/formento/algorithmexercises/distancecalculator/DistanceCalculator.java)
 
 #### How to
-Build with `$ gradle build`
+Test: `$ gradle test -i`
 
-Run with `$ gradle bootRun`
+Build: `$ gradle build`
+
+Run: `$ gradle bootRun`
