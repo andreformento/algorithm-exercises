@@ -8,30 +8,14 @@ import static org.junit.Assert.assertThat;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
 import com.formento.algorithmexercises.pointinrectangle.template.RegionTemplate;
-import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.junit.Cucumber;
 import java.util.Collection;
 import java.util.List;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-    format = {"pretty", "html:target/cucumber"},
-    features = "classpath:cucumber"
-)
 public class PointInsideRegionTest {
-
-    @BeforeClass
-    public static void initClass() {
-        FixtureFactoryLoader.loadTemplates("com.formento.algorithmexercises.pointinrectangle.template");
-    }
-
 
     /*
     P = (5,2) -> [F]
@@ -49,12 +33,9 @@ public class PointInsideRegionTest {
     private Point point;
     private Collection<Rectangle> rectanglesByPoint;
 
-    @Test
-    public void shouldDoNothing() {
-    }
-
     @Given("^a valid region$")
     public void given_a_valid_region() {
+        FixtureFactoryLoader.loadTemplates("com.formento.algorithmexercises.pointinrectangle.template");
         this.region = Fixture.from(Region.class).gimme(RegionTemplate.VALID);
     }
 
