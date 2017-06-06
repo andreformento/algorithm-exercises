@@ -22,30 +22,29 @@ public class DistanceCalculatorTest {
     public void shouldCalculateDistance() {
         // given
         final List<Character> characters = ImmutableList.<Character>builder()
-                .add('d')
-                .add('j')
-                .add('b')
-                .add('c')
-                .add('j')
-                .add('j')
-                .add('b')
-                .add('d')
-                .add('e')
-                .add('b')
-                .add('e')
-                .add('g')
-                .add('d')
-                .add('e')
-                .build();
-
+            .add('d')
+            .add('j')
+            .add('b')
+            .add('c')
+            .add('j')
+            .add('j')
+            .add('b')
+            .add('d')
+            .add('e')
+            .add('b')
+            .add('e')
+            .add('g')
+            .add('d')
+            .add('e')
+            .build();
 
         final Integer maxDistance = 3;
 
         final Map<Character, List<Integer>> expected = ImmutableMap.<Character, List<Integer>>builder()
-                .put('b', ImmutableList.<Integer>builder().add(3).build())
-                .put('e', ImmutableList.<Integer>builder().add(2, 3).build())
-                .put('j', ImmutableList.<Integer>builder().add(3, 1).build())
-                .build();
+            .put('b', ImmutableList.<Integer>builder().add(3).build())
+            .put('e', ImmutableList.<Integer>builder().add(2, 3).build())
+            .put('j', ImmutableList.<Integer>builder().add(3, 1).build())
+            .build();
 
         // when
         final Map<Character, List<Integer>> result = distanceCalculator.calculateDistance(characters, maxDistance);

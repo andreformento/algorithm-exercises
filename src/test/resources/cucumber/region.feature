@@ -1,4 +1,5 @@
 Feature: Regions by point
+
   Scenario: a point inside with just one region
     Given the region with this rectangles:
       | 0 | 1 | 5 | 6 |

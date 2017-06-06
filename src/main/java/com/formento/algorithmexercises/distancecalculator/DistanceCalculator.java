@@ -14,25 +14,25 @@ public class DistanceCalculator {
 
     public Map<Character, List<Integer>> calculateDistance(final List<Character> characters, final Integer maxDistance) {
         return characters
-                .stream()
-                .distinct()
-                .map(character -> new AbstractMap.SimpleImmutableEntry<>(character, getDistances(characters, maxDistance, character)))
-                .filter(entry -> !entry.getValue().isEmpty())
-                .sorted(comparing(AbstractMap.SimpleImmutableEntry::getKey))
-                .collect(
-                        toMap(
-                                Map.Entry::getKey,
-                                Map.Entry::getValue
-                        )
-                );
+            .stream()
+            .distinct()
+            .map(character -> new AbstractMap.SimpleImmutableEntry<>(character, getDistances(characters, maxDistance, character)))
+            .filter(entry -> !entry.getValue().isEmpty())
+            .sorted(comparing(AbstractMap.SimpleImmutableEntry::getKey))
+            .collect(
+                toMap(
+                    Map.Entry::getKey,
+                    Map.Entry::getValue
+                )
+            );
     }
 
     private List<Integer> getDistances(final List<Character> characters, final Integer maxDistance, final Character character) {
         final List<Integer> indexes = IntStream
-                .range(0, characters.size())
-                .filter(index -> character.equals(characters.get(index)))
-                .boxed()
-                .collect(toList());
+            .range(0, characters.size())
+            .filter(index -> character.equals(characters.get(index)))
+            .boxed()
+            .collect(toList());
 
         final ImmutableList.Builder<Integer> distances = ImmutableList.builder();
         for (int i = 1; i < indexes.size(); i++) {
@@ -40,10 +40,10 @@ public class DistanceCalculator {
         }
 
         return distances
-                .build()
-                .stream()
-                .filter(index -> index <= maxDistance)
-                .collect(toList());
+            .build()
+            .stream()
+            .filter(index -> index <= maxDistance)
+            .collect(toList());
     }
 
 }

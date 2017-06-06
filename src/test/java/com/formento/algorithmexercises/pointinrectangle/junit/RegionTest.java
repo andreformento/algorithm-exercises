@@ -1,11 +1,7 @@
 package com.formento.algorithmexercises.pointinrectangle.junit;
-import com.formento.algorithmexercises.pointinrectangle.junit.template.RectangleTemplate;
-import com.formento.algorithmexercises.pointinrectangle.junit.template.PointTemplate;
-import com.formento.algorithmexercises.pointinrectangle.junit.template.RegionTemplate;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -16,15 +12,16 @@ import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
 import com.formento.algorithmexercises.pointinrectangle.Point;
 import com.formento.algorithmexercises.pointinrectangle.Rectangle;
 import com.formento.algorithmexercises.pointinrectangle.Region;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.PointTemplate;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.RectangleTemplate;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.RegionTemplate;
 import java.util.Collection;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.Matchers;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import com.formento.algorithmexercises.pointinrectangle.junit.template.RectangleTemplate;
-import com.formento.algorithmexercises.pointinrectangle.junit.template.PointTemplate;
-import com.formento.algorithmexercises.pointinrectangle.junit.template.RegionTemplate;
+
 public class RegionTest {
 
     @BeforeClass

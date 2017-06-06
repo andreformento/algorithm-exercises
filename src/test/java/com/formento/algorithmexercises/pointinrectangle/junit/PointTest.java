@@ -7,11 +7,11 @@ import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
-import  com.formento.algorithmexercises.pointinrectangle.junit.template.PointTemplate;
 
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
 import com.formento.algorithmexercises.pointinrectangle.Point;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.PointTemplate;
 import com.google.common.collect.ImmutableSortedSet;
 import java.util.Collection;
 import nl.jqno.equalsverifier.EqualsVerifier;
