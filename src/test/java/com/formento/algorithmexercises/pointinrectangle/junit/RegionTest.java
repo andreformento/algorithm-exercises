@@ -1,4 +1,7 @@
-package com.formento.algorithmexercises.pointinrectangle;
+package com.formento.algorithmexercises.pointinrectangle.junit;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.RectangleTemplate;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.PointTemplate;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.RegionTemplate;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.allOf;
@@ -10,19 +13,23 @@ import static org.junit.Assert.assertThat;
 
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
-import com.formento.algorithmexercises.pointinrectangle.template.PointTemplate;
-import com.formento.algorithmexercises.pointinrectangle.template.RectangleTemplate;
-import com.formento.algorithmexercises.pointinrectangle.template.RegionTemplate;
+import com.formento.algorithmexercises.pointinrectangle.Point;
+import com.formento.algorithmexercises.pointinrectangle.Rectangle;
+import com.formento.algorithmexercises.pointinrectangle.Region;
 import java.util.Collection;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.Matchers;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+import com.formento.algorithmexercises.pointinrectangle.junit.template.RectangleTemplate;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.PointTemplate;
+import com.formento.algorithmexercises.pointinrectangle.junit.template.RegionTemplate;
 public class RegionTest {
 
     @BeforeClass
     public static void initClass() {
-        FixtureFactoryLoader.loadTemplates("com.formento.algorithmexercises.pointinrectangle.template");
+        FixtureFactoryLoader.loadTemplates("com.formento.algorithmexercises.pointinrectangle.junit.template");
     }
 
     @Test
@@ -57,8 +64,8 @@ public class RegionTest {
         final Collection<Rectangle> result = region.getRectangles();
 
         // then
-        assertThat(result, contains(
-            allOf(hasProperty("leftBottom", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_0_0))),
+        assertThat(result, Matchers.contains(
+            Matchers.allOf(hasProperty("leftBottom", CoreMatchers.is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_0_0))),
                 hasProperty("rightTop", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_2_3)))),
             allOf(hasProperty("leftBottom", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_0_3))),
                 hasProperty("rightTop", is(Fixture.from(Point.class).<Point>gimme(PointTemplate.P_2_5)))),

@@ -2,6 +2,7 @@ package com.formento.algorithmexercises.pointinrectangle;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSortedSet;
+import java.beans.ConstructorProperties;
 import java.util.Collection;
 import java.util.Objects;
 import lombok.Getter;
@@ -11,6 +12,7 @@ public class Region {
 
     private final Collection<Rectangle> rectangles;
 
+    @ConstructorProperties({"rectangles"})
     private Region(final Collection<Rectangle> rectangles) {
         this.rectangles = ImmutableSortedSet.<Rectangle>naturalOrder().addAll(rectangles).build();
     }

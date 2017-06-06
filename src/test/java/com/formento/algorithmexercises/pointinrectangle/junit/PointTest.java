@@ -1,4 +1,4 @@
-package com.formento.algorithmexercises.pointinrectangle;
+package com.formento.algorithmexercises.pointinrectangle.junit;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.allOf;
@@ -7,10 +7,11 @@ import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
+import  com.formento.algorithmexercises.pointinrectangle.junit.template.PointTemplate;
 
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
-import com.formento.algorithmexercises.pointinrectangle.template.PointTemplate;
+import com.formento.algorithmexercises.pointinrectangle.Point;
 import com.google.common.collect.ImmutableSortedSet;
 import java.util.Collection;
 import nl.jqno.equalsverifier.EqualsVerifier;
@@ -21,7 +22,7 @@ public class PointTest {
 
     @BeforeClass
     public static void initClass() {
-        FixtureFactoryLoader.loadTemplates("com.formento.algorithmexercises.pointinrectangle.template");
+        FixtureFactoryLoader.loadTemplates("com.formento.algorithmexercises.pointinrectangle.junit.template");
     }
 
     @Test

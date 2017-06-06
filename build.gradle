@@ -31,6 +31,7 @@ project.ext {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-web')
     compile('com.google.guava:guava:21.0')
 
     compileOnly("org.projectlombok:lombok:1.16.16")
@@ -41,4 +42,5 @@ dependencies {
     testCompile("info.cukes:cucumber-java8:" + cucumberVersion)
     testCompile("info.cukes:cucumber-junit:" + cucumberVersion)
     testCompile("info.cukes:cucumber-spring:" + cucumberVersion)
+
 }

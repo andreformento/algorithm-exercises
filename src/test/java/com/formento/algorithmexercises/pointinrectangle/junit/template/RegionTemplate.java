@@ -1,4 +1,4 @@
-package com.formento.algorithmexercises.pointinrectangle.template;
+package com.formento.algorithmexercises.pointinrectangle.junit.template;
 
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
